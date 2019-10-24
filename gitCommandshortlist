@@ -1,0 +1,47 @@
+Install GitDesktop (optional)  
+   You can login GitHub Enterprise via GitDesktop
+
+Fork an organization repo
+Every developer should not directly work on organization repo, e.g. 
+connections-files-bluegreen/learning. Instead, you should fork a personal repo, e.g.{yourname}/learning. 
+You should be able navigate to your personal repo on Git web UI.
+
+Clone your personal repo ( you could choose to use git command directly instead of GitDesktop GUI)
+Using browser to view your personal repo, click 'Open Or Download' (in 
+Code tab). Choose 'Open in  Desktop'. Your browser should launch 
+GitDesktop app and clone it to your local machine    
+   You can view the content locally
+   You can check git remote -v to see local and remote streams
+
+Sync your personal repo master w/ organization repo master
+Make sure you are in master branch by 
+git checkout master
+git fetch connections-files-bluegreen
+git pull connections-files-bluegreen master
+git push origin master
+
+Working on a feature
+Create and switch to a new branch by git checkout -b <new-feature>
+
+Make code change
+
+Add modified files to be commit. You may need use these commands 
+    git status, 
+    git -add ., 
+    git -add <specific file>Commit change. 
+    git commit or git commit -m {comment} or git commit --amend (append to an existing commit)
+    Push local branch to server, git push -u origin <branch-name>Prepare to create 'Pull Request'
+
+Make sure your branch and master is updated. If not, you need do
+Sync your personal master with organization master (check step above)
+Switch to feature branch, git checkout <branch-name>
+Rebase the branch, git pull --rebase origin master
+
+If you have conflict and need resolve the conflict then run
+git rebase --continue
+after rebased need make sure the code is right, and git push or git push --force(only if
+you can't push and make sure you change is right)Push change  to server, git push
+On Git web UI, create Pull Request for the feature branch
+After feature branch is merged to organization master, delete the branch.
+Delete server side on Git web UIDelete local copy by git branch -D <branch-name>
+
