@@ -45,3 +45,15 @@ On Git web UI, create Pull Request for the feature branch
 After feature branch is merged to organization master, delete the branch.
 Delete server side on Git web UIDelete local copy by git branch -D <branch-name>
 
+
+Undo local changes:
+At this point there are 3 options to undo the local changes you have:
+Discard all local changes, but save them for possible re-use later:
+git stash
+
+Discarding local changes (permanently) to a file:
+git checkout -- <file>
+
+Discard all local changes to all files permanently:
+git reset --hard
+
