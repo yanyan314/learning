@@ -57,3 +57,18 @@ git checkout -- <file>
 Discard all local changes to all files permanently:
 git reset --hard
 
+How to checkout remote branch: https://dzone.com/articles/what-is-git-checkout-remote-branch-how-it-works-wh
+How Does Git Checkout Remote Branch Work?
+Git checkout remote branch lets us switch to (and work on) a remote branch, just like we’d switch to a local one. There are a couple of ways to do this.
+First, fetch the remote branches:
+ git fetch origin 
+Next, checkout the branch you want. In this case, the branch we want is called “branchxyz.”
+ git checkout -b branchxyz origin/branchxyz 
+Or you can use:
+ git branch branchxyz origin/branchxyz 
+With newer versions, you can simply use:
+ git fetch 
+ git checkout branchxyz 
+ 
+ 
+
